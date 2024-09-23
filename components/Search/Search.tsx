@@ -30,11 +30,13 @@ const Search = () => {
   return (
     <div className={styles.searchContainer}>
       <input
+        className={styles.searchInput}
         placeholder="Buscar Productos..."
         type="text"
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
       />
+      <img className={styles.searchIcon} src="/icons/search-gray.svg" alt="" />
     </div>
   );
 };

@@ -1,2 +1,57 @@
-.header {
+.navigationContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  width: 30%;
+  height: auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+.navigation {
+  width: 10%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.cartLink {
+  position: relative;
+  display: block;
+}
+
+.cartIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.cartCounter {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  padding: 0.25rem;
+  background: var(--gray);
+  color: var(--black);
+  border-radius: 1rem;
+  border: solid 1px var(--black);
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logo {
+    width: 10%;
+  }
 }

@@ -1,13 +1,45 @@
+$breakpoint-mobile-01: 576px;
+$breakpoint-mobile-02: 768px;
+$breakpoint-tablet-01: 992px;
+$breakpoint-desktop-01: 1200px;
+$breakpoint-desktop-02: 1600px;
+
 :root {
+  --purple-brand: #898ac7;
+  --black: #101010;
   --purple: #bbc0dd;
   --white: #f5f6f6;
   --gray: #b4b4b4;
-  --green: #96c3ca;
-  --yellow: #c5cb90;
+  --green-product: #96c3ca;
+  --yellow-product: #c5cb90;
   --purple-product: #908ac7;
 }
 
 html {
-  font-family: var(--font-poppins);
   font-size: 16px;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }

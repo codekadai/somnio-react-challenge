@@ -1,2 +1,8 @@
-.footer {
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
 }

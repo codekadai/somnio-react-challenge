@@ -10,9 +10,8 @@ const CheckoutInfo = () => {
 
   return (
     <div className={styles.checkout}>
-      <h1>Checkout</h1>
-      <p>Su total a pagar es de:</p>
-      <h2>$ {Math.round(total)}</h2>
+      <p className={styles.checkoutText}>Su total a pagar es de:</p>
+      <h2 className={styles.checkoutAmount}>USD {Math.round(total)}</h2>
     </div>
   );
 };

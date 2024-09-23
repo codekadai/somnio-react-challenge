@@ -13,22 +13,30 @@ const Navigation = (props: NavigationProps) => {
   const { hasSearch } = props;
   const { totalCart } = useAppContext();
   return (
-    <>
-      <div>
+    <div className={styles.navigationContainer}>
+      <div className={styles.logo}>
         <Link href={"/"}>
           <img src={"/logo.svg"} alt="" />
         </Link>
       </div>
       {hasSearch && <Search />}
-      <nav className={styles.header}>
+      <nav className={styles.navigation}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <Link href={"/cart"}>Cart</Link>
-            <span>{totalCart}</span>
+            <Link href={"/cart"} className={styles.cartLink}>
+              <img
+                className={styles.cartIcon}
+                src={"/icons/cart-white.svg"}
+                alt=""
+              />
+              {totalCart !== 0 && (
+                <span className={styles.cartCounter}>{totalCart}</span>
+              )}
+            </Link>
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 

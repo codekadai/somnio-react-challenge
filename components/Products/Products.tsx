@@ -88,23 +88,52 @@ const Products = (props: ProductsProps) => {
   }, [pagination, products, cart, setCurrentProducts, setProducts]);
 
   return (
-    <div className={styles.productsContainer}>
-      {currentProducts
-        .slice(0, pagination.page * pagination.itemsPerPage)
-        .map((product, index) => (
-          <div key={index}>
-            <h3>{product.title}</h3>
-
-            <p>{product.description}</p>
-            <button onClick={() => addToCart(product.id)}>
-              Agregar al Carrito
-            </button>
-          </div>
-        ))}
+    <>
+      <div className={styles.productsContainer}>
+        {currentProducts
+          .slice(0, pagination.page * pagination.itemsPerPage)
+          .map((product, index) => (
+            <div className={styles.product} key={index}>
+              <div className={styles.productMedia}>
+                <img
+                  className={styles.productImage}
+                  src={product.image}
+                  alt=""
+                />
+                <span
+                  className={`${styles.productPrice} ${
+                    styles[`productColor${(index % 3) + 1}`]
+                  }`}
+                >
+                  USD {product.price}
+                </span>
+              </div>
+              <div className={styles.productContent}>
+                <h3 className={styles.productTitle}>{product.title}</h3>
+                <p className={styles.productDescription}>
+                  {product.description}
+                </p>
+              </div>
+              <button
+                className={styles.productAdd}
+                onClick={() => addToCart(product.id)}
+              >
+                <img src="/icons/add.svg" alt="" />
+              </button>
+            </div>
+          ))}
+      </div>
       {pagination.page * pagination.itemsPerPage < products.length && (
-        <button onClick={() => showMoreProducts()}>Ver más</button>
+        <div className={styles.productsSeeMoreContainer}>
+          <button
+            className={styles.productsSeeMore}
+            onClick={() => showMoreProducts()}
+          >
+            Ver más
+          </button>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

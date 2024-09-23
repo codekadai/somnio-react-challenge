@@ -5,8 +5,6 @@ import { AppProvider } from "@/context/AppContext";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-open-sans",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
@@ -22,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable}`}>
+      <body className={`${openSans.className}`}>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
