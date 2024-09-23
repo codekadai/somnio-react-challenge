@@ -129,7 +129,8 @@ const Products = (props: ProductsProps) => {
             className={styles.productsSeeMore}
             onClick={() => showMoreProducts()}
           >
-            Ver más
+            <img src="/icons/eye.svg" alt="" />
+            <span>Ver más</span>
           </button>
         </div>
       )}

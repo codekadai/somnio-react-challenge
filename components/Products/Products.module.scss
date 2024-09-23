@@ -81,11 +81,21 @@ $colors: (#908ac7, #96c3ca, #c5cb90);
 .productsSeeMore {
   width: 100%;
   max-width: 280px;
+  min-height: 3rem;
   padding: 0.5rem;
   text-align: center;
   background: #fff;
   border: solid 1px var(--gray);
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -104,6 +114,12 @@ $colors: (#908ac7, #96c3ca, #c5cb90);
   .product {
     &:hover {
       box-shadow: 2px 2px 4px 0px var(--gray);
+    }
+  }
+
+  .productsSeeMore {
+    &:hover {
+      box-shadow: 2px 2px 4px 0px var(--purple-brand);
     }
   }
 }

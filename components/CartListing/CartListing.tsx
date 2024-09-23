@@ -18,7 +18,7 @@ const CartListing = () => {
               {cartItem.product.title}
             </span>
           </p>
-          <span className={styles.cartSubtotal}>{cartItem.subtotal}</span>
+          <span className={styles.cartSubtotal}>USD {cartItem.subtotal}</span>
         </li>
       ))}
     </ul>
