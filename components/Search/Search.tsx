@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Product } from "@/types/Product";
 
 const Search = () => {
-  const { products, setCurrentProducts } = useAppContext();
+  const { currentProducts, setCurrentProducts } = useAppContext();
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearchValue = useDebounce(searchValue, 500);
 
@@ -15,17 +15,17 @@ const Search = () => {
     if (typeof window !== "undefined") {
       const pagination = JSON.parse(localStorage.getItem("pagination") || "{}");
       if (debouncedSearchValue) {
-        const filteredProducts = products
+        const filteredProducts = currentProducts
           .slice(0, pagination.page * pagination.itemsPerPage)
           .filter((product: Product) => product.title.includes(searchValue));
         setCurrentProducts(filteredProducts);
       } else {
         setCurrentProducts(
-          products.slice(0, pagination.page * pagination.itemsPerPage)
+          currentProducts.slice(0, pagination.page * pagination.itemsPerPage)
         );
       }
     }
-  }, [debouncedSearchValue, products, searchValue, setCurrentProducts]);
+  }, [debouncedSearchValue, currentProducts, searchValue, setCurrentProducts]);
 
   return (
     <div className={styles.searchContainer}>
