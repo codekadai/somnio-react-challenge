@@ -13,15 +13,21 @@ This is a challenge about a small e-commerce with features such as:
 
 ### Setup
 
+Run this command
+
 ```js
 npm i
 ```
 
 ### Run the server
 
+Run this command
+
 ```js
 npm run dev
 ```
+
+Open [http://localhost:3000/](http://localhost:3000/) in the browser
 
 ### Considerations
 
